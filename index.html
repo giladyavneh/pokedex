@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <script src="pokedex.js" defer></script>
+    <link type="text/css" rel="stylesheet" href="pokedex.css">
 </head>
 <body>
-    <div id="data"></div>
-    <img id="img">
+    <div id="main">
+        <h1>pokedex</h1>
+        <div id="searchbar">
+            <input id="input"><button id="search" onclick="getMain(document.querySelector('#input').value)">search</button>
+        </div>
+        <div id="view">
+            <img id="img" hidden>
+            <div id="stats"></div>
+        </div>
+        <div id="playground"></div>
+    </div>
+    
+    
 </body>
 </html>

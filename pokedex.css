@@ -1,0 +1,42 @@
+div, span, body, a, button{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#main{
+    border: solid black;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+}
+#main #searchbar #input{
+    width: auto;
+    text-align: center;
+}
+#main #searchbar #search{
+    width:fit-content;
+}
+#main #view{
+    display: flex;
+    justify-content: space-between;
+}
+#main #view #img{
+    padding: 0px;
+    width:40%;
+}
+#main #view #stats{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 50%;
+    text-align: left;
+}
+#playground{
+    overflow-wrap: normal;
+}
+#playground span{
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+}
