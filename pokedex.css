@@ -40,6 +40,9 @@ div, span, body, a, button{
     padding: 10px;
     cursor: pointer;
 }
+#playground img{
+    cursor: pointer;
+}
 .under{
     display: flex;
     justify-content: space-evenly;
