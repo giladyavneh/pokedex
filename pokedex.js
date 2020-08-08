@@ -65,17 +65,27 @@ async function getEvolution(data){
     let eChain= await fetch(data.species.url).then(res=>res.json()).then(res=>fetch(res.evolution_chain.url))
     .then(res=>res.json())
     let stage=eChain.chain
-    function recurse(stage,count=0){
-        let outcome=[]
-        count+=1
-        outcome.push([stage.species.name, count])
-        if (stage.evolves_to.len==0) return outcome
+    async function recurse(stage,target,current){
+        let slot=document.createElement("div")
+        let img=document.createElement("img")
+        slot.appendChild(img)
+        fetch(BASE_URL+stage.species.name).then(res=>res.json()).then(res=>{
+            img.src=res.sprites.front_default;
+            if(current.name===res.name){
+                img.style.border="solid blue"
+            }
+            })
+        let under=document.createElement("div")
+        under.className="under"
+        slot.appendChild(under)
+
+        if (stage.evolves_to.len==0) return
         else{
-            stage.evolves_to.forEach(x=>outcome=outcome.concat(recurse(x,count)))
+            stage.evolves_to.forEach(x=>recurse(x,under,current))
         }
-        return outcome
+        target.appendChild(slot)
     }
-    return recurse(stage)
+    recurse(stage,document.getElementById("playground"),data)
 }
 
 async function getType(e){

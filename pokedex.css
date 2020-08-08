@@ -40,3 +40,7 @@ div, span, body, a, button{
     padding: 10px;
     cursor: pointer;
 }
+.under{
+    display: flex;
+    justify-content: space-evenly;
+}
